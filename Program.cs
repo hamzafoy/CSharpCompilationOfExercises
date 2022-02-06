@@ -31,10 +31,17 @@ namespace Exercises
             Console.Write("\n");
             Console.Write("Expected behavior of ArrayOfMultiples() \n1st input is the number whose multiples will be listed & the 2nd input determines how many multiples will be listed: ");
             Console.WriteLine($"\nIf given 12 & 10 = {string.Join(",", MathematicOperations.ArrayOfMultiples(12, 10))}");
+            Console.Write("\n");
+            Console.Write("Expected behavior of IsThereANeighbor() \nA 3-letter string inputted checks if the 1st or 3rd letter in the string is a neighbor of the 2nd letter in the alphabet: ");
+            Console.WriteLine($"\nIf given 'GWX' = {IsThereANeighbor("GWX")}");
         }
         private static bool IsThisAllUppercaseLetters(string a)
         {
             return (char.IsUpper(a[0]) && char.IsUpper(a[1]) && char.IsUpper(a[2]));
+        }
+        private static bool IsThereANeighbor(string a)
+        {
+            return ((((int)a[1] - 1) == ((int)a[0])) || (((int)a[1] + 1) == ((int)a[2])));
         }
     }
 }
