@@ -34,6 +34,9 @@ namespace Exercises
             Console.Write("\n");
             Console.Write("Expected behavior of IsThereANeighbor() \nA 3-letter string inputted checks if the 1st or 3rd letter in the string is a neighbor of the 2nd letter in the alphabet: ");
             Console.WriteLine($"\nIf given 'GWX' = {IsThereANeighbor("GWX")}");
+            Console.Write("\n");
+            Console.Write("Expected behavior of ReverseCase() \nWill reverse the case of every letter in a string inputted while ignoring whitespaces: ");
+            Console.WriteLine($"If given 'ARUU said the dwarf' = {ReverseCase("ARUU said the Dwarf")}");
         }
         private static bool IsThisAllUppercaseLetters(string a)
         {
@@ -42,6 +45,25 @@ namespace Exercises
         private static bool IsThereANeighbor(string a)
         {
             return ((((int)a[1] + 1) == ((int)a[0])) || (((int)a[1] - 1) == ((int)a[0])) || (((int)a[1] + 1) == ((int)a[2])) || (((int)a[1] - 1) == ((int)a[2])));
+        }
+        private static string ReverseCase(string a)
+        {
+            char[] deconstructedString = a.ToCharArray();
+            for (int i = 0; i < deconstructedString.Length; i++)
+            {
+                char letter = (char)deconstructedString[i];
+                if (Char.IsWhiteSpace(letter))
+                {
+                    deconstructedString[i] = (char)32;
+                }
+                else
+                {
+                    char letterSwappedCase = (Char.IsUpper(letter)) ? Char.ToLower(letter) : Char.ToUpper(letter);
+                    deconstructedString[i] = letterSwappedCase;
+                }
+            }
+            string assembledStringWithReverseCases = string.Join("", deconstructedString);
+            return assembledStringWithReverseCases;
         }
     }
 }
