@@ -41,7 +41,7 @@ namespace Exercises
         }
         private static bool IsThereANeighbor(string a)
         {
-            return ((((int)a[1] - 1) == ((int)a[0])) || (((int)a[1] + 1) == ((int)a[2])));
+            return ((((int)a[1] + 1) == ((int)a[0])) || (((int)a[1] - 1) == ((int)a[0])) || (((int)a[1] + 1) == ((int)a[2])) || (((int)a[1] - 1) == ((int)a[2])));
         }
     }
 }
