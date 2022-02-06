@@ -36,7 +36,7 @@ namespace Exercises
             Console.WriteLine($"\nIf given 'GWX' = {IsThereANeighbor("GWX")}");
             Console.Write("\n");
             Console.Write("Expected behavior of ReverseCase() \nWill reverse the case of every letter in a string inputted while ignoring whitespaces: ");
-            Console.WriteLine($"If given 'ARUU said the dwarf' = {ReverseCase("ARUU said the Dwarf")}");
+            Console.WriteLine($"If given 'ARUU said the dwarf' = {ReverseCase("'ARUU,' the Dwarf bellowed as he swung his mighty AXE!")}");
         }
         private static bool IsThisAllUppercaseLetters(string a)
         {
@@ -52,9 +52,9 @@ namespace Exercises
             for (int i = 0; i < deconstructedString.Length; i++)
             {
                 char letter = (char)deconstructedString[i];
-                if (Char.IsWhiteSpace(letter))
+                if (Char.IsWhiteSpace(letter) || Char.IsWhiteSpace(letter))
                 {
-                    deconstructedString[i] = (char)32;
+                    deconstructedString[i] = deconstructedString[i];
                 }
                 else
                 {
